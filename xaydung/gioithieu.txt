@@ -1,0 +1,94 @@
+https://t004.gokisoft.com/
+======HƯỚNG DẪN PHÁT TRIỂN DỰ ÁN WBSITE BÁN HÀNG=====
+-. phân tích dự án
+-. thiết kế CSDL
+-. Triểu khai dự án 
+Yêu cầu công nghệ sử dụng:
+	- Fontend: HTML, CSS, JS, boóttrap4, jQuerry
+	- Backend: PHP/MySQL
+Chức năng nổi bật trong dự án:
+	- thiết kế website bán hàng chuẩn, đáp ứng các yêu cầu thực tế của website bản hàng.
+	- Ajax dự án.
+	- Cookie/session trong dự án
+	- Tải ảnh lên server
+	- Localstorage 
+	- Thư viện soạn thảo nội dung (summernote)
+
+
+---------PHÂN TÍCH DỰ ÁN-----------
+Fontend:
+	1. Trang chủ.
+	2. Trang danh mục sản phẩm.
+	3. Trang chi tiết SP.
+	4. Trang giỏ hàng.
+	5. Trang checkout. (mua hàng, thanh toán)
+	6. Tranh thanh toán hoàn thành.
+	7. Trang liên hệ (giới thiiệu doanh nghiệp)
+Admin:
+	1. Tài khoản người dùng: Quản lý role(admin, user), quản lý nguời dùng (admin, user), đkí tài khoản, đăng nhập.
+	2. Quản lý danh mục SP( Hiển thị, thêm, sửa, xóa)
+	3. Quản lý SP( Hiển thị, thêm, sửa, xóa)
+	4. Quản lý đơn hàng: Hiển thị danh sách các đơn hàng theo thời gian.
+	5. Quản lý phản hồi:
+
+--------CƠ SỞ DỮ LIỆU-------------
+Dựa vào phân tích ở trên để xây dựng database.
+https://dbdiagram.io/d/64841681722eb77494b93e68
+
+1. Bảng role:
+	- id: int -->khóa chính.
+	- name: string (varchar).
+2. Bảng user:
+	- id: int -->khóa chính.
+	- fullname: string (varchar).	
+	- email: varchar
+	- phonenumber: varchar.
+	- address:
+	- password: mã hóa md5 - 32 ký tự
+	- role_id: int--> foreign key --> role (id)
+	- deleted int
+3. Bảng danh mục. category
+	- id: int -->khóa chính.
+	- name: string (varchar).
+4. Bảng sản phẩm: product
+	- id: int -->khóa chính.
+	- title: string (varchar).
+	- danhmuc_id: int --. foreign key -->category(id)
+	- price: float.
+	- discount: float
+	- thumbnail:string -> hình ảnh sp
+	- description: longtext
+	- create_at: datetime->ngày tạo
+	- update_at: datetime->ngày chỉnh sửa 
+	- deleted int
+5. Bảng quản lý hình Nhr : galery
+	- id: int-> khóa tự tăng
+	- product_id --> foreign key-> product(id)
+	- thumbnail-> string.
+6. Bảng quản lí phản hồi: feedback
+	- id: int-> khóa tự tăng
+	- firstname-> string
+	- lastename-> string
+	- email -> string
+	- phonenumber
+	- subject_name:
+	- note -> string( varchar400 )
+7. Quản lí đơn hàng:
+	7.1. bang order
+	- id: int-> khóa tự tăng
+	- user_id int
+	- email
+	- fullname
+	- phonenumber
+	- address
+	- note: ghi chu don hnag
+	- order_date: datetime
+	- status: int (1 or 0)
+	- total_money ->int : tong tien cua don hang
+	7.2. bang chi tiet don hang:
+	- id: int-> khóa tự tăng
+	- order_id -? foreign key --> order(id)
+	- product_id -->int--> foreign key -> product(id)
+	- price ->float
+	- number: so luong mua
+	- total_money: (price*number) tong tien cua 1 san pham

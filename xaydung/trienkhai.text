@@ -1,0 +1,42 @@
+-----TRIỂN KHAI--------
+
+- Frontend
+- Admin
+- CSDL
+
+Frontend:
+- home.PHP or index.php
+- category.php
+- detail.php
+- cart.php
+- checkout.php 
+- complete.php
+- contact.php
+Admin
+        - authen/**
+                - Đăng ký: điển thông tin vào form, sử dụng MD5 để mã hóa mật khẩu, lưu thời gian đkí. giao diện và phần xử lí tách ra 2 file khác nhau
+                - Đăng nhập// 
+                - giữ đăng nhập- keep login*********
+                        login thành công: generate token: duy nhất cho tài khoản và thời điểm login
+                        gán cái token xuống cookie
+                                + lưu token vào csdl và quản lý nó
+                                + kết hợp sử dựng session để hệ thống tối ưu hơn về login
+                        tạo quản quản lý token -> create table tokens
+                        - đăng xuất: Hủy cookie, hủy session, xóa khỏi bảng tokens
+        - index.php: dành cho admin quản lí các folder công việc, mainpage
+                - page tổng sẽ dẫn đến từng trang quản lý
+                - LAYOUT/** : CHỨa file header và file footer
+        - user/** --> quản lí tài khoản người dùng
+                + Thêm, sửa, dùng file editor.php để xử lí:
+                        thêm tài khoản
+                        sửa tài khaonr, thì thêm cái id ở đường dẫn 
+        - category/**
+        - product/**
+        - order/**
+        - feedback/**
+        - LAYOUT/** : CHỨa file header và file footer
+Database
+- config.php --> cau hinh CSDL
+- dbhelper.php --> chua cac function dung chung cho ca du an
+utils
+- utility.php --> chua cac ham tien ich cho ca du admin, ho tro database

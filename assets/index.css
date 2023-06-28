@@ -1,0 +1,120 @@
+:root{
+
+}
+* {
+    box-sizing: inherit;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body{
+}
+/* .grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+} */
+.header{
+    width: 100%;
+    height: 60px;
+    background-image: url(image/background_header.png);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.header img{
+    width: 55px;
+    height: 55px;
+}
+.header-col{
+    margin: 0px;
+    padding-left: 0px;
+}
+.text{
+    color: rgb(8, 8, 8); 
+    text-decoration: none;
+}
+.header-item-logo{
+    display: inline-block;
+    margin-right: 100px;
+    padding-bottom: 0px;
+    padding-left: 30px;
+}
+.header-item{
+    display: inline-block;
+    margin-right:  40px;
+    margin-top: 10px;
+    
+}
+.carousel-inner img {
+    width: 100%;
+    height: 500px;
+    padding: 30px;
+}
+.container-row{
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+}
+.row-product{
+    width: 22%;
+    margin: 20px;
+    padding: 10px;
+}
+.row-product img{
+    width: 100%;
+    height: 300px;
+}
+.row-product p{
+    margin-bottom: 7px;
+}
+.item-product:hover{
+    background-color: rgb(185, 203, 220);
+    
+}
+.footer{
+    background-color: rgb(82, 160, 208);
+    height: 600px;
+}
+.footer-col{
+    margin: 30px;
+}
+.footer-col li{
+    list-style-type: none;
+}
+.container-detail{
+    margin-top: 100px;
+}
+.row-detail{
+    display: flex;
+}
+.col-detail{
+    padding: 20px;
+}
+.col-detail img{
+    width: 90%;
+    margin-right: 40px;
+    margin-left: 40px;
+    height: auto;
+}
+.col-detail ul{
+    padding: 0px;
+    display: flex;
+    list-style: none;
+}
+.table{
+    border: 1px solid rgb(74, 72, 72); padding: 8px;
+}
+.table-th{
+    border: 1px solid  rgb(74, 72, 72); padding: 8px;
+}

@@ -1,0 +1,21 @@
+.container{
+    margin-top:20px; width:100%;
+    padding-left: 0px;
+}
+.container-form{
+    padding:15px; background-color: white;
+    border-radius: 10px;
+    border: 1px solid black; 
+}
+.form-row{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.form-col1{
+    margin-right: 40px;
+    width: 70%;
+}
+.form-col2{
+    width: 30%;
+}
